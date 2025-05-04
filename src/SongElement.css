@@ -1,0 +1,7 @@
+.border
+{
+    padding: 5px;
+    border: black solid 2px;
+    margin: 10px 0px;
+    background-color: azure;
+}
