@@ -16,6 +16,7 @@ useEffect(() =>{
 */
 
 import readXlsxFile from 'read-excel-file';
+const base_url=import.meta.env.BASE_URL;
 
 export async function handle_data(data)
 {
@@ -37,7 +38,7 @@ export async function handle_data(data)
 export async function fetch_data(target_file)
 {
     console.log("Awaiting");
-    const dictionaries=await fetch('/'+target_file)
+    const dictionaries=await fetch(`${base_url}${target_file}`)
     .then(response => response.blob())
     .then(blob => readXlsxFile(blob,{sheet:"Data"}))
     .then(async(rows) => {
